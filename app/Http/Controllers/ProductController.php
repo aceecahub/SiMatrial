@@ -34,7 +34,6 @@ class ProductController extends Controller
             'category_id' => 'required|exists:categories,id',
             'unit' => 'required|string|max:50',
             'stock' => 'required|integer|min:0',
-            'price_buy' => 'required|numeric|min:0',
             'price_sell' => 'required|numeric|min:0',
         ]);
 
@@ -54,7 +53,6 @@ class ProductController extends Controller
             'name' => 'required|string|max:255|unique:products,name,' . $id,
             'category_id' => 'required|exists:categories,id',
             'unit' => 'required|string|max:50',
-            'price_buy' => 'required|numeric|min:0',
             'price_sell' => 'required|numeric|min:0',
         ]);
 

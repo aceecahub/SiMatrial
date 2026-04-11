@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('name');
             $table->string('unit')->default('pcs');
             $table->integer('stock')->default(0); // Input stok awal & masuk ke sini
-            $table->decimal('price_buy', 15, 2); // Harga modal (penting buat laba/rugi)
+            
             $table->decimal('price_sell', 15, 2); // Harga jual
             $table->timestamps();
         });

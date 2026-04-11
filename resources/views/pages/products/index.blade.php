@@ -3,13 +3,13 @@
         showModal: false,
         editMode: false,
         showStockModal: false,
-        product: { id: null, name: '', category_id: '', unit: '', stock: 0, price_buy: 0, price_sell: 0 },
+        product: { id: null, name: '', category_id: '', unit: '', stock: 0, price_sell: 0 },
         openModal(edit = false, data = null) {
             this.editMode = edit;
             if (edit) {
                 this.product = { ...data };
             } else {
-                this.product = { id: null, name: '', category_id: '', unit: '', stock: 0, price_buy: 0, price_sell: 0 };
+                this.product = { id: null, name: '', category_id: '', unit: '', stock: 0, price_sell: 0 };
             }
             this.showModal = true;
         },
@@ -66,7 +66,6 @@
                                     <th class="px-6 py-4 font-bold">Produk</th>
                                     <th class="px-6 py-4 font-bold">Kategori</th>
                                     <th class="px-6 py-4 font-bold">Stok</th>
-                                    <th class="px-6 py-4 font-bold">Harga Modal</th>
                                     <th class="px-6 py-4 font-bold">Harga Jual</th>
                                     <th class="px-6 py-4 font-bold text-center">Aksi</th>
                                 </tr>
@@ -101,8 +100,7 @@
                                                 </button>
                                             </div>
                                         </td>
-                                        <td class="px-6 py-4 font-medium text-slate-500">Rp
-                                            {{ number_format($item->price_buy, 0, ',', '.') }}</td>
+
                                         <td class="px-6 py-4 font-bold text-blue-600">Rp
                                             {{ number_format($item->price_sell, 0, ',', '.') }}</td>
                                         <td class="px-6 py-4">
@@ -205,11 +203,7 @@
                                             class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 transition-all outline-none">
                                     </div>
                                 </template>
-                                <div class="col-span-1">
-                                    <label class="block text-sm font-bold text-slate-700 mb-1">Harga Modal</label>
-                                    <input type="number" name="price_buy" x-model="product.price_buy" required
-                                        class="w-full px-4 py-2 border border-slate-200 rounded-xl focus:ring-2 focus:ring-blue-500 transition-all outline-none">
-                                </div>
+
                                 <div class="col-span-1">
                                     <label class="block text-sm font-bold text-slate-700 mb-1">Harga Jual</label>
                                     <input type="number" name="price_sell" x-model="product.price_sell" required
